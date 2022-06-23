@@ -19,7 +19,7 @@
                                                 id="exampleFormControlInput1" placeholder="Add new...">
                                            
                                             <div>
-                                                <input type="checkbox" v-model="newCourEtat" class=""
+                                                <input type="checkbox" v-model="newCourEtat" class="m-4"
                                                 >
                                             </div>
                                             <div>
