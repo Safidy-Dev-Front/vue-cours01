@@ -3,6 +3,8 @@
         <h1>{{ message }}</h1>
         <p>{{ value }}</p>
         <button @click="toIncrement" :disabled="isButtonDisabled">incremennt {{ countId }}</button>
+        <button @click="toDecrement" :disabled="countId <= 0 ? true : false">Decremennt {{ countId }}</button>
+
     </div>
     <ul>
         <UserTodo userItem=1 />
@@ -14,8 +16,6 @@
     <!-- Attribute Bindings -->
     <div :id="countId">ID is {{countId}}</div>
 </template>
-
-
 <script>
 import UserTodo from '@/components/todoStatic.vue';
 export default {
@@ -34,7 +34,10 @@ export default {
     methods: {
         toIncrement() {
             this.countId++;
-        },
+        }, 
+        toDecrement(){
+            this.countId--;
+        }
     },
     computed: {
         isButtonDisabled(){
