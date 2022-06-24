@@ -32,7 +32,7 @@
 
                             <hr class="my-4">
                           
-                            <ul v-for="item in items" :key="item.id" class="list-group list-group-horizontal rounded-0 bg-transparent">
+                            <ul v-for="item in reseveItems" :key="item.id" class="list-group list-group-horizontal rounded-0 bg-transparent">
                                 <li
                                     class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
                                     <div class="form-check">
@@ -71,6 +71,12 @@ export default {
     methods:{
         addCours(){
             this.items.push({id: this.items.length + 1, cour: this.newCourName, isComplet: this.newCourEtat})        
+        }
+        
+    },
+    computed:{
+        reseveItems(){
+            return [...this.items].reverse()
         }
     }
 }
